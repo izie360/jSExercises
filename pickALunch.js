@@ -7,7 +7,7 @@ function addLunchToEnd (arr,str){
 
 }
 
-funcion addLunchtoStart(arr,str){
+function addLunchtoStart(arr,str){
     arr.unshift(str);
     console.log(`${str} added to the start of the lunch menu.`);
     return arr;
@@ -59,7 +59,7 @@ function showLunchMenu(arr){
         console.log(`The menue is empty.`);
         //return arr;
     }else{
-        let str = arr.join( ,);
+        let str = arr.join( " ,");
         let displayText = "Menu items: "+ str;
         console.log(displayText);
 
