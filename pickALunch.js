@@ -1,5 +1,12 @@
 const lunches = [];
 
+function addLunchToStart(arr,str){
+    arr.unshift(str);
+    console.log(`${str} added to the start of the lunch menu.`);
+    return arr;
+
+}
+
 function addLunchToEnd (arr,str){
     arr.push(str);
     console.log(`${str} added to the end of the lunch menu.`);
@@ -7,12 +14,7 @@ function addLunchToEnd (arr,str){
 
 }
 
-function addLunchtoStart(arr,str){
-    arr.unshift(str);
-    console.log(`${str} added to the start of the lunch menu.`);
-    return arr;
 
-}
 
 function removeLastLunch(arr){
     if(arr.length ===0){
@@ -56,10 +58,10 @@ function getRandomLunch(arr){
 
 function showLunchMenu(arr){
     if(arr.length===0){
-        console.log(`The menue is empty.`);
+        console.log(`The menu is empty.`);
         //return arr;
     }else{
-        let str = arr.join( " ,");
+        let str = arr.join(", ");
         let displayText = "Menu items: "+ str;
         console.log(displayText);
 
