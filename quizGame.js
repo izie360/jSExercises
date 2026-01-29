@@ -47,18 +47,18 @@ let questions = [
 ];
 /*You should have a function named getRandomQuestion
  that takes an array of questions as a parameter and returns a random question object from the array.*/
-function getRandomQuestion (arr){
-  lngth = arr.length;
-  randomC = Math.floor(Math.random()*lngth);
-  return arr[randomC];
+function getRandomQuestion (questions){
+  let lngth = questions.length;
+  let randomC = Math.floor(Math.random()*lngth);
+  return questions[randomC];
 }
 
 /*You should have a function named getRandomComputerChoice that takes 
 the array of the available choices as a parameter, and returns a random answer to the selected question. */
 
 function getRandomComputerChoice (arrAvailChoices){
-  lngth = arrAvailChoices.length;
-  randomC = Math.floor(Math.random()*lngth);
+  let lngth = arrAvailChoices.length;
+  let randomC = Math.floor(Math.random()*lngth);
   return arrAvailChoices[randomC];
 }
 
@@ -79,11 +79,13 @@ The correct answer is: <correct-answer>, where <correct-answer>
   */
 
  function getResults(qObj,cChoice){
-    if(cChoice===qObj.answer){
+    let qAns = qObj.answer;
+
+    if(cChoice===qAns){
       return "The computer's choice is correct!"
     }else{
 
-      return `The computer's choice is wrong. The correct answer is ${qObj.answer}.`
+      return `The computer's choice is wrong. The correct answer is: ${qAns}`;
     }
 
 
