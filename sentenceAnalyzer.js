@@ -16,3 +16,30 @@ function getVowelCount(sentence){
 
   return charCount;
 }
+
+/*It's time to count the consonants. Create a getConsonantCount function with a sentence parameter.
+
+Inside the function, use a loop to count the number of consonants in the sentence that will be passed into the function when it is called. A consonant is any letter that is not one of the following characters: "aeiou".
+
+Your getConsonantCount function must return a number.  */
+
+function getConsonantCount(sentence){
+
+    let count = 0;
+    let vowels = "aeiouAEIOU";
+
+    function consonantCheck(char){
+        let charChecker = (char>="a"&&char<="z")||(char>="A"&&char<="Z");
+        let vowelChecker = !(vowels.includes(char));
+        return charChecker&&vowelChecker;
+    }
+
+    for(let char of sentence){
+
+        if(consonantCheck(char)){
+            count++;
+        }
+    }
+
+    return count;
+}
