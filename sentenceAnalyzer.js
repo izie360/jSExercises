@@ -43,3 +43,42 @@ function getConsonantCount(sentence){
 
     return count;
 }
+
+/* Step 5
+You should count the number of punctuations now.
+Create a getPunctuationCount function with a sentence parameter.
+Inside the function, create a loop to count the number of 
+punctuation characters in the sentence that will be passed into the function
+when it is called. For our purposes, a punctuation character 
+is any character that is not a space (" ") or a letter.
+Your getPunctuationCount function must return a number.  
+
+function getPunctuationCount(sentence) {
+  const punctuations = ".,!?;:-()[]{}\"'–";
+  let count = 0;
+
+  for (const char of sentence) {
+    if (punctuations.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+*/
+
+function getPunctuationCount(sentence){
+    let count = 0;
+     function punctuationCheck(char){
+        let charChecker = (char>="a"&&char<="z")||(char>="A"&&char<="Z");
+        let spaceChecker = char===" ";
+        return charChecker||spaceChecker;
+    }
+    
+    for(let char of sentence){
+        if(!(punctuationCheck(char))){
+           count++; 
+        }
+    }
+    return count;
+    
+}
